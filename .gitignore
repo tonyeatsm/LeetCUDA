@@ -34,3 +34,4 @@ AGENTS.md
 .plans
 .tmp
 *.o
+.venv
