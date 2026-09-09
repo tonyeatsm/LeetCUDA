@@ -112,6 +112,11 @@ sudo docker start leetcuda
 sudo docker exec -it leetcuda /bin/bash
 source /workspace/LeetCUDA/.venv/bin/activate
 
+# 打印显卡算力和显卡型号
+cd /workspace/LeetCUDA/kernels/elementwise
+python3 -c "import torch; name=torch.cuda.get_device_name(); cc=torch.cuda.get_device_capability(); print(f'GPU = {name}'); print(f'Compute Capability = {cc[0]}.{cc[1]} (sm_{cc[0]}{cc[1]})')"
+
+# 执行elementwise
 cd /workspace/LeetCUDA/kernels/elementwise
 export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
 python3 elementwise.py
