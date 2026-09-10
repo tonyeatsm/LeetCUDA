@@ -116,9 +116,14 @@ source /workspace/LeetCUDA/.venv/bin/activate
 cd /workspace/LeetCUDA/kernels/elementwise
 python3 -c "import torch; name=torch.cuda.get_device_name(); cc=torch.cuda.get_device_capability(); print(f'GPU = {name}'); print(f'Compute Capability = {cc[0]}.{cc[1]} (sm_{cc[0]}{cc[1]})')"
 
-# 执行elementwise
+# 逐元素
 cd /workspace/LeetCUDA/kernels/elementwise
 export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
 python3 elementwise.py
+
+# 直方图统计
+cd /workspace/LeetCUDA/kernels/histogram
+export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
+python3 histogram.py
 
 ```
