@@ -113,7 +113,6 @@ sudo docker exec -it leetcuda /bin/bash
 source /workspace/LeetCUDA/.venv/bin/activate
 
 # 打印显卡算力和显卡型号
-cd /workspace/LeetCUDA/kernels/elementwise
 python3 -c "import torch; name=torch.cuda.get_device_name(); cc=torch.cuda.get_device_capability(); print(f'GPU = {name}'); print(f'Compute Capability = {cc[0]}.{cc[1]} (sm_{cc[0]}{cc[1]})')"
 
 # 逐元素
@@ -125,5 +124,10 @@ python3 elementwise.py
 cd /workspace/LeetCUDA/kernels/histogram
 export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
 python3 histogram.py
+
+# 激活函数 sigmoid
+cd /workspace/LeetCUDA/kernels/sigmoid
+export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
+python3 sigmoid.py
 
 ```
