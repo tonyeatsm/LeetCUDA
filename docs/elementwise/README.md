@@ -199,7 +199,9 @@ elementwise.py
 
 脚本在 `load(...)` 完成后会用
 `print(ext._get_build_directory("elementwise_lib", False))` 打印
-PyTorch CUDA 扩展的实际构建目录，便于确认 `elementwise_lib.so` 的存放位置。
+PyTorch CUDA 扩展的实际构建目录，便于确认 `elementwise_lib.so` 的存放位置；
+随后用 `print(torch.cuda.get_device_name())` 打印当前 GPU 设备名，
+便于对照不同显卡上的耗时数据。
 
 打印对照结果前，`run_benchmark` 会通过
 `out.flatten().detach().cpu().numpy().tolist()[:2]` 把 GPU 上的结果张量

@@ -50,6 +50,9 @@ lib = load(
 # 打印 PyTorch CUDA 扩展的实际构建目录（elementwise_lib.so 所在位置）
 print(ext._get_build_directory("elementwise_lib", False))
 
+# 打印当前 GPU 设备名
+print(torch.cuda.get_device_name())
+
 
 # 基准测试封装：
 # - 传入 out 时走“原地写 c”的 kernel 接口；

@@ -50,6 +50,9 @@ lib = load(
 # 打印 PyTorch CUDA 扩展的实际构建目录（hist_lib.so 所在位置）
 print(ext._get_build_directory("hist_lib", False))
 
+# 打印当前 GPU 设备名
+print(torch.cuda.get_device_name())
+
 # 构造测试数据：0~9 每个值各出现 1000 次，总长度 N = 10 * 1000 = 10000。
 # 元素都是非负 int32；且 N 恰好是 4 的倍数，因此向量化版本不会读到越界数据。
 a = torch.tensor(list(range(10)) * 1000, dtype=torch.int32).cuda()
