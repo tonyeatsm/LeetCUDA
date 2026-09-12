@@ -130,4 +130,9 @@ cd /workspace/LeetCUDA/kernels/sigmoid
 export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
 python3 sigmoid.py
 
+# 激活函数 ReLU
+cd /workspace/LeetCUDA/kernels/relu
+export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
+python3 relu.py
+
 ```
