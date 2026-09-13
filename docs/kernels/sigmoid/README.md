@@ -26,7 +26,7 @@ y[i] = 1 / (1 + exp(-x[i])),  i = 0 .. N-1
 本模块参照 elementwise 模块的做法，统一补充教学注释，改动原则是
 **只加注释、不改 kernel 逻辑**，具体包含：
 
-1. 先更新本文档（`docs/sigmoid/README.md`）；
+1. 先更新本文档（`docs/kernels/sigmoid/README.md`）；
 2. 给 `kernels/sigmoid/sigmoid.cu` 补充分节标题、调用链、grid/block 速查、
    exp 溢出保护与 FP16 精度说明，以及逐行行内注释；
 3. 给 `kernels/sigmoid/sigmoid.py` 补充模块 docstring 与行内注释，并新增

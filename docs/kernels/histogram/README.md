@@ -28,7 +28,7 @@ a = [0, 1, 2, 0, 1, 0]
 本模块参照 elementwise 模块的做法，统一补充教学注释，改动原则是
 **只加注释、不改 kernel 逻辑**，具体包含：
 
-1. 先更新本文档（`docs/histogram/README.md`）；
+1. 先更新本文档（`docs/kernels/histogram/README.md`）；
 2. 给 `kernels/histogram/histogram.cu` 补充分节标题、调用链、grid/block 速查、
    原子操作竞争说明与逐行行内注释；
 3. 给 `kernels/histogram/histogram.py` 补充模块 docstring 与行内注释，并新增

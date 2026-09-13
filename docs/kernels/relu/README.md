@@ -31,7 +31,7 @@ y[i] = max(0, x[i]),  i = 0 .. N-1
 本模块参照 elementwise / sigmoid 模块的做法，统一补充教学注释，改动原则是
 **只加注释、不改 kernel 逻辑**，具体包含：
 
-1. 先更新本文档（`docs/relu/README.md`）；
+1. 先更新本文档（`docs/kernels/relu/README.md`）；
 2. 给 `kernels/relu/relu.cu` 补充分节标题、调用链、grid/block 速查、
    ReLU 数学性质说明，以及逐行行内注释；
 3. 给 `kernels/relu/relu.py` 补充模块 docstring 与行内注释，并新增
@@ -157,7 +157,7 @@ relu(x) = max(0, x) = { x,  x > 0
 ### 3. 为什么 ReLU 不需要溢出保护（与 sigmoid 的关键差异）
 
 sigmoid 必须先 `clamp` 再 `exp`，否则 `exp(-x)` 会溢出（见
-`docs/sigmoid/README.md` 中的 `MAX_EXP_F32` / `MAX_EXP_F16` 说明）。
+`docs/kernels/sigmoid/README.md` 中的 `MAX_EXP_F32` / `MAX_EXP_F16` 说明）。
 ReLU 完全没有这个问题：
 
 | 输入情况 | `relu_f32_kernel` 的结果 |
