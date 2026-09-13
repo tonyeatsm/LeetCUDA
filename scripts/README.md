@@ -135,4 +135,19 @@ cd /workspace/LeetCUDA/kernels/relu
 export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
 python3 relu.py
 
+# 激活函数 ELU
+cd /workspace/LeetCUDA/kernels/elu
+export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
+python3 elu.py
+
+# 激活函数 GELU
+cd /workspace/LeetCUDA/kernels/gelu
+export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
+python3 gelu.py
+
+# 激活函数 Swish (SiLU)
+cd /workspace/LeetCUDA/kernels/swish
+export TORCH_CUDA_ARCH_LIST=Blackwell # Ada
+python3 swish.py
+
 ```
